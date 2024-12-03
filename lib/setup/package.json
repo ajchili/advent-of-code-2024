@@ -1,0 +1,16 @@
+{
+  "name": "@ajchili/advent-of-code-2024-setup-day",
+  "scripts": {
+    "add-day": "tsx index.ts"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "@types/nunjucks": "^3.2.6",
+    "tsx": "*",
+    "typescript": "*",
+    "vitest": "*"
+  }
+}

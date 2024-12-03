@@ -2,9 +2,11 @@
   "name": "@ajchili/advent-of-code-2024",
   "packageManager": "npm@10.7.0",
   "workspaces": [
+    "lib/*",
     "days/*"
   ],
   "scripts": {
+    "add-day": "npm run add-day -w @ajchili/advent-of-code-2024-setup-day",
     "start": "turbo start"
   },
   "devDependencies": {
