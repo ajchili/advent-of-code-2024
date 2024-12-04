@@ -1,18 +1,11 @@
-import { readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const data = readFileSync(resolve(__dirname, "input.txt"));
+import { getInputData } from "advent-of-code";
 
 type ParsedInput = [number[], number[]];
 
-export const parseInput = (input: string): ParsedInput => {
+export const parseInput = (input: string[]): ParsedInput => {
   const result: ParsedInput = [[], []];
 
-  for (const line of input.split("\n")) {
+  for (const line of input) {
     if (line.length === 0) {
       continue;
     }
@@ -57,9 +50,12 @@ export const deriveSimilarityOfLists = (lists: ParsedInput): number => {
   return similarity;
 };
 
-const parsedInput = parseInput(data.toString());
-const sortedInput = sortParsedInput(parsedInput);
-const distance = deriveDistanceOfLists(sortedInput);
-const similarity = deriveSimilarityOfLists(parsedInput);
+export const getSolution = async () => {
+  const input = await getInputData(2024, 1);
+  const parsedInput = parseInput(input);
+  const sortedInput = sortParsedInput(parsedInput);
+  const distance = deriveDistanceOfLists(sortedInput);
+  const similarity = deriveSimilarityOfLists(parsedInput);
 
-console.log(distance, similarity);
+  console.log("Day 1:", distance, similarity);
+};

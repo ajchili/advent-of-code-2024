@@ -1,16 +1,9 @@
-import { readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { getInputData } from "advent-of-code";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const data = readFileSync(resolve(__dirname, "input.txt"));
-
-const partOne = () => {
+const partOne = (input: string[]): number => {
   let total = 0;
   const pattern = /mul\(\d{1,3},\d{1,3}\)/g;
-  const matches = Array.from(data.toString().matchAll(pattern));
+  const matches = Array.from(input.join("\n").matchAll(pattern));
 
   for (const [mul] of matches) {
     const start = mul.indexOf("(") + 1;
@@ -22,11 +15,11 @@ const partOne = () => {
   return total;
 };
 
-const partTwo = () => {
+const partTwo = (input: string[]): number => {
   let total = 0;
   let multiplicationEnabled = true;
   const pattern = /(mul\(\d{1,3},\d{1,3}\))|do\(\)|don't\(\)/g;
-  const matches = data.toString().matchAll(pattern);
+  const matches = input.join("\n").matchAll(pattern);
 
   for (const [matchedString] of matches) {
     if (matchedString === "do()") {
@@ -50,4 +43,7 @@ const partTwo = () => {
   return total;
 };
 
-console.log(partOne(), partTwo());
+export const getSolution = async () => {
+  const input = await getInputData(2024, 3);
+  console.log("Day 3:", partOne(input), partTwo(input));
+};

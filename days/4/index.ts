@@ -124,5 +124,5 @@ export const part2 = (input: string[]): number => {
 export const getSolution = async () => {
   const input = await getInputData(2024, 4);
 
-  console.log(part1(input), part2(input));
+  console.log("Day 4:", part1(input), part2(input));
 };

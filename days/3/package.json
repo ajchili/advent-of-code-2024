@@ -1,7 +1,11 @@
 {
   "name": "@ajchili/advent-of-code-2024-day-3",
+  "type": "module",
   "scripts": {
-    "start": "tsx index.ts"
+    "start": "tsx --eval \"import {getSolution} from './index'; getSolution();\""
+  },
+  "dependencies": {
+    "advent-of-code": "*"
   },
   "devDependencies": {
     "@types/node": "*",

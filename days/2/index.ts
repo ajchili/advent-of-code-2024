@@ -1,19 +1,11 @@
-import { readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const data = readFileSync(resolve(__dirname, "input.txt"));
+import { getInputData } from "advent-of-code";
 
 export const parseReport = (report: string): number[] => {
   return report.split(" ").map((level) => parseInt(level, 10));
 };
 
-export const parseReports = (reports: string): number[][] => {
+export const parseReports = (reports: string[]): number[][] => {
   return reports
-    .split("\n")
     .filter((report) => report.length > 0)
     .map((report) => parseReport(report));
 };
@@ -62,9 +54,14 @@ export const getNumberOfSafeReports = (
   }, 0);
 };
 
-const reports = parseReports(data.toString());
+export const getSolution = async () => {
+  const input = await getInputData(2024, 2);
 
-console.log(
-  getNumberOfSafeReports(reports),
-  getNumberOfSafeReports(reports, 1)
-);
+  const reports = parseReports(input);
+
+  console.log(
+    "Day 2:",
+    getNumberOfSafeReports(reports),
+    getNumberOfSafeReports(reports, 1)
+  );
+};
