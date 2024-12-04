@@ -44,4 +44,9 @@ describe("getNumberOfSafeReports", () => {
     const reports = parseReports(INPUT);
     expect(getNumberOfSafeReports(reports)).toBe(2);
   });
+
+  it("works with tolerance (1)", () => {
+    const reports = parseReports(INPUT);
+    expect(getNumberOfSafeReports(reports, 1)).toBe(4);
+  });
 });
