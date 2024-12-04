@@ -7,7 +7,9 @@
   ],
   "scripts": {
     "add-day": "npm run add-day -w @ajchili/advent-of-code-2024-setup-day",
-    "start": "turbo start"
+    "start": "turbo start",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch"
   },
   "devDependencies": {
     "@types/node": "^20.17.9",
