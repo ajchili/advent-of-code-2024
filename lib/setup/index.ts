@@ -22,6 +22,12 @@ const answerContent = renderString(
   }),
   { dayNumber }
 );
+const testContent = renderString(
+  readFileSync(resolve(__dirname, "templates/index.spec.ts.nunjucks"), {
+    encoding: "utf-8",
+  }),
+  { dayNumber }
+);
 const packageJsonContent = renderString(
   readFileSync(resolve(__dirname, "templates/package.json.nunjucks"), {
     encoding: "utf-8",
@@ -34,6 +40,9 @@ if (!existsSync(packagePath)) {
 }
 
 writeFileSync(resolve(packagePath, "index.ts"), answerContent, {
+  encoding: "utf-8",
+});
+writeFileSync(resolve(packagePath, "index.spec.ts"), testContent, {
   encoding: "utf-8",
 });
 writeFileSync(resolve(packagePath, "package.json"), packageJsonContent, {

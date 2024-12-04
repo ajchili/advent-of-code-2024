@@ -1,7 +1,9 @@
 {
   "name": "@ajchili/advent-of-code-2024-day-{{ dayNumber }}",
   "scripts": {
-    "start": "tsx index.ts"
+    "start": "tsx index.ts",
+    "test": " vitest --run",
+    "test:watch": " vitest"
   },
   "devDependencies": {
     "@types/node": "*",
