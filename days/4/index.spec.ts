@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { part2, path1 } from ".";
+import { part2, part1 } from ".";
 
 const INPUT = [
   "MMMSXXMASM",
@@ -38,31 +38,31 @@ const REDUCED_INPUT_2 = [
   "..........",
 ];
 
-describe("path1", () => {
+describe("part1", () => {
   it("finds horizontal matches", () => {
-    expect(path1(["XMAS"])).toBe(1);
-    expect(path1(["XMASS"])).toBe(1);
-    expect(path1(["SAMX"])).toBe(1);
-    expect(path1(["SAMXS"])).toBe(1);
-    expect(path1(["XMASAMX"])).toBe(2);
-    expect(path1(["SAMXMAS"])).toBe(2);
+    expect(part1(["XMAS"])).toBe(1);
+    expect(part1(["XMASS"])).toBe(1);
+    expect(part1(["SAMX"])).toBe(1);
+    expect(part1(["SAMXS"])).toBe(1);
+    expect(part1(["XMASAMX"])).toBe(2);
+    expect(part1(["SAMXMAS"])).toBe(2);
   });
 
   it("finds vertical matches", () => {
-    expect(path1(["X", "M", "A", "S"])).toBe(1);
-    expect(path1(["X", "M", "A", "S"].reverse())).toBe(1);
+    expect(part1(["X", "M", "A", "S"])).toBe(1);
+    expect(part1(["X", "M", "A", "S"].reverse())).toBe(1);
   });
 
   it("finds diagonal matches", () => {
-    expect(path1(["X___", "_M__", "__A_", "___S"])).toBe(1);
-    expect(path1(["S___", "_A__", "__M_", "___X"])).toBe(1);
-    expect(path1(["X___", "_M__", "__A_", "___S"].reverse())).toBe(1);
-    expect(path1(["S___", "_A__", "__M_", "___X"].reverse())).toBe(1);
+    expect(part1(["X___", "_M__", "__A_", "___S"])).toBe(1);
+    expect(part1(["S___", "_A__", "__M_", "___X"])).toBe(1);
+    expect(part1(["X___", "_M__", "__A_", "___S"].reverse())).toBe(1);
+    expect(part1(["S___", "_A__", "__M_", "___X"].reverse())).toBe(1);
   });
 
   it("works", () => {
-    expect(path1(INPUT)).toBe(18);
-    expect(path1(REDUCED_INPUT)).toBe(18);
+    expect(part1(INPUT)).toBe(18);
+    expect(part1(REDUCED_INPUT)).toBe(18);
   });
 });
 

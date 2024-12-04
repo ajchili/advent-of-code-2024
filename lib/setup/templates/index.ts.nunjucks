@@ -1,9 +1,11 @@
 import { getInputData } from "advent-of-code";
 
-const input = await getInputData(2024, {{ dayNumber }});
-
 export const part1 = (input: string[]): any => {};
 
 export const part2 = (input: string[]): any => {};
 
-console.log(part1(input), part2(input));
+export const getSolution = async () => {
+  const input = await getInputData(2024, {{ dayNumber }});
+
+  console.log(path1(input), part2(input));
+};

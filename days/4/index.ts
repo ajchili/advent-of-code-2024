@@ -1,8 +1,6 @@
 import { getInputData } from "advent-of-code";
 
-const input = await getInputData(2024, 4);
-
-export const path1 = (input: string[]): number => {
+export const part1 = (input: string[]): number => {
   let count = 0;
 
   for (let i = 0; i < input.length; i++) {
@@ -123,4 +121,8 @@ export const part2 = (input: string[]): number => {
   return count;
 };
 
-console.log(path1(input), part2(input));
+export const getSolution = async () => {
+  const input = await getInputData(2024, 4);
+
+  console.log(part1(input), part2(input));
+};

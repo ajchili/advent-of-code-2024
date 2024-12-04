@@ -2,7 +2,7 @@
   "name": "@ajchili/advent-of-code-2024-day-{{ dayNumber }}",
   "type": "module",
   "scripts": {
-    "start": "tsx index.ts",
+    "start": "tsx --eval \"import {getSolution} from './index'; getSolution();\"",
     "test": " vitest --run",
     "test:watch": " vitest"
   },
