@@ -6,14 +6,9 @@ import {
   deriveSimilarityOfLists,
 } from "./index";
 
-const INPUT = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3";
+const INPUT = "3   4\n4   3\n2   5\n1   3\n3   9\n3   3".split("\n");
 
 describe("parseInput", () => {
-  it("returns an empty array when the provided string is empty", () => {
-    expect(parseInput("")).toStrictEqual([[], []]);
-    expect(parseInput("\n")).toStrictEqual([[], []]);
-  });
-
   it("returns the list of provided numbers", () => {
     expect(parseInput(INPUT)).toStrictEqual([
       [3, 4, 2, 1, 3, 3],
