@@ -22,6 +22,6 @@ describe("part1", () => {
 
 describe("part2", () => {
   it("works", () => {
-    expect(part2(INPUT)).toBe(0);
+    expect(part2(INPUT)).toBe(6);
   });
 });
